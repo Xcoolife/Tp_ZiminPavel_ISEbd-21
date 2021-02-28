@@ -148,6 +148,10 @@
       <Project>{6F9C20ED-80EA-413F-9208-59E7DF8792E9}</Project>
       <Name>TreeFactoryBusinessLogic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TreeFactoryFileImplement\TreeFactoryFileImplement\TreeFactoryFileImplement.csproj">
+      <Project>{BA26AD37-63AB-4E44-85AF-750878D1A8CE}</Project>
+      <Name>TreeFactoryFileImplement</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TreeFactoryListImplement\TreeFactoryListImplement.csproj">
       <Project>{0C51B6CD-4BFF-41FB-8736-965FC70929F2}</Project>
       <Name>TreeFactoryListImplement</Name>
