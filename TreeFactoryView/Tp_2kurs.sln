@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeFactoryView", "TreeFact
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeFactoryBusinessLogic", "..\TreeFactoryBusinessLogic\TreeFactoryBusinessLogic.csproj", "{6F9C20ED-80EA-413F-9208-59E7DF8792E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeFactoryListImplement", "..\TreeFactoryListImplement\TreeFactoryListImplement\TreeFactoryListImplement.csproj", "{0C51B6CD-4BFF-41FB-8736-965FC70929F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeFactoryListImplement", "..\TreeFactoryListImplement\TreeFactoryListImplement.csproj", "{0C51B6CD-4BFF-41FB-8736-965FC70929F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
