@@ -23,11 +23,6 @@ namespace Tp_2kurs
             InitializeComponent();
             this.orderLogic = orderLogic;
         }
-
-        private void FormMain_Load(object sender, EventArgs e)
-        {
-            LoadData();
-        }
         private void LoadData()
         {
             try
@@ -123,6 +118,11 @@ namespace Tp_2kurs
         }
 
         private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
         {
             LoadData();
         }
