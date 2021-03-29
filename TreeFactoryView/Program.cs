@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TreeFactoryBusinessLogic.BusinessLogics;
 using TreeFactoryBusinessLogic.Interfaces;
-using TreeFactoryDatabaseImplement.Implements;
+using TreeFactoryFileImplement.Implements;
 using Unity;
 using Unity.Lifetime;
 
@@ -37,6 +37,7 @@ namespace Tp_2kurs
             currentContainer.RegisterType<OrderLogic>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<WoodLogic>(new
            HierarchicalLifetimeManager());
+            currentContainer.RegisterType<ReportLogic>(new HierarchicalLifetimeManager());
             return currentContainer;
         }
     }
