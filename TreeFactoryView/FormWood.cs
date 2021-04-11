@@ -68,7 +68,7 @@ namespace Tp_2kurs
                     dataGridView.Rows.Clear();
                     foreach (var pc in woodComponents)
                     {
-                        dataGridView.Rows.Add(new object[] {  pc.Value.Item1, pc.Value.Item2 });
+                        dataGridView.Rows.Add(new object[] { pc.Value.Item1, pc.Value.Item2 });
                     }
                 }
             }
