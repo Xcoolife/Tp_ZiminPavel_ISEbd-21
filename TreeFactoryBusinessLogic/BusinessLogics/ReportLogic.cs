@@ -12,20 +12,17 @@ namespace TreeFactoryBusinessLogic.BusinessLogics
 {
     public class ReportLogic
     {
-        private readonly IComponentStorage _componentStorage;
         private readonly IWoodStorage _woodStorage;
         private readonly IOrderStorage _orderStorage;
 
-        public ReportLogic(IWoodStorage woodStorage, IComponentStorage componentStorage, IOrderStorage orderStorage)
+        public ReportLogic(IWoodStorage woodStorage,IOrderStorage orderStorage)
         {
             _woodStorage = woodStorage;
-            _componentStorage = componentStorage;
             _orderStorage = orderStorage;
         }
 
-        public List<ReportWoodComponentViewModel> GetWoodComponents()
+        public List<ReportWoodComponentViewModel> GetWoodComponent()
         {
-            var components = _componentStorage.GetFullList();
             var woods = _woodStorage.GetFullList();
             var list = new List<ReportWoodComponentViewModel>();
             foreach (var wood in woods)
@@ -37,13 +34,10 @@ namespace TreeFactoryBusinessLogic.BusinessLogics
                     TotalCount = 0
                 };
 
-                foreach (var component in components)
+                foreach (var component in wood.WoodComponents)
                 {
-                    if (wood.WoodComponents.ContainsKey(component.Id))
-                    {
-                        record.Components.Add(new Tuple<string, int>(component.ComponentName, wood.WoodComponents[component.Id].Item2));
-                        record.TotalCount += wood.WoodComponents[component.Id].Item2;
-                    }
+                    record.Components.Add(new Tuple<string, int>(component.Value.Item1, component.Value.Item2));
+                    record.TotalCount += component.Value.Item2;
                 }
                 list.Add(record);
             }
@@ -59,7 +53,7 @@ namespace TreeFactoryBusinessLogic.BusinessLogics
                 WoodName = x.WoodName,
                 Count = x.Count,
                 Sum = x.Sum,
-                Status = ((OrderStatus)Enum.Parse(typeof(OrderStatus), x.Status.ToString()))
+                Status = x.Status
             })
             .ToList();
         }
@@ -80,7 +74,7 @@ namespace TreeFactoryBusinessLogic.BusinessLogics
             {
                 FileName = model.FileName,
                 Title = "Список изделий",
-                ComponentWoods = GetWoodComponents()
+                WoodComponents = GetWoodComponent()
             });
         }
 

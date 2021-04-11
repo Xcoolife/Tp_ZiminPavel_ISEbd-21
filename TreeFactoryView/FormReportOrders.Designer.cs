@@ -92,7 +92,7 @@ namespace Tp_2kurs
             // 
             // reportViewer
             // 
-            this.reportViewer.LocalReport.ReportEmbeddedResource = "Tp_2kurs.ReportOrders.rdlc";
+            this.reportViewer.LocalReport.ReportEmbeddedResource = "Tp_2kurs.ReportOrder.rdlc";
             this.reportViewer.Location = new System.Drawing.Point(12, 28);
             this.reportViewer.Name = "reportViewer";
             this.reportViewer.ServerReport.BearerToken = null;

@@ -16,10 +16,10 @@ namespace TreeFactoryDatabaseImplement.Models
         [Required]
         public decimal Price { get; set; }
 
-        [ForeignKey("CannedId")]
+        [ForeignKey("WoodId")]
         public virtual List<WoodComponent> WoodComponents { get; set; }
 
-        [ForeignKey("CannedId")]
+        [ForeignKey("WoodId")]
         public virtual List<Order> Order { get; set; }
     }
 }

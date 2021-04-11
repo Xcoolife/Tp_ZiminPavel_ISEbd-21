@@ -49,7 +49,6 @@ namespace Tp_2kurs
         {
             var form = Container.Resolve<FormComponents>();
             form.ShowDialog();
-
         }
 
         private void изделияToolStripMenuItem_Click(object sender, EventArgs e)

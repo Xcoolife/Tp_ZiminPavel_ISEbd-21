@@ -58,7 +58,7 @@ namespace TreeFactoryBusinessLogic.BusinessLogics
                 });
                 uint rowIndex = 2;
 
-                foreach (var pc in info.ComponentWoods)
+                foreach (var pc in info.WoodComponents)
                 {
                     InsertCellInWorksheet(new ExcelCellParameters
                     {
@@ -95,7 +95,15 @@ namespace TreeFactoryBusinessLogic.BusinessLogics
 
                         rowIndex++;
                     }
-
+                    InsertCellInWorksheet(new ExcelCellParameters
+                    {
+                        Worksheet = worksheetPart.Worksheet,
+                        ShareStringPart = shareStringPart,
+                        ColumnName = "A",
+                        RowIndex = rowIndex,
+                        Text = "Итого:",
+                        StyleIndex = 0U
+                    });
                     InsertCellInWorksheet(new ExcelCellParameters
                     {
                         Worksheet = worksheetPart.Worksheet,
@@ -105,7 +113,7 @@ namespace TreeFactoryBusinessLogic.BusinessLogics
                         Text = pc.TotalCount.ToString(),
                         StyleIndex = 0U
                     });
-                    rowIndex++;
+                    rowIndex += 2;
                 }
                 workbookpart.Workbook.Save();
 

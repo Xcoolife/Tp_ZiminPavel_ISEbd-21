@@ -31,8 +31,8 @@ namespace Tp_2kurs
         {
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.SaveToExcel = new System.Windows.Forms.Button();
-            this.Component = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Wood = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Component = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -41,8 +41,8 @@ namespace Tp_2kurs
             // 
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Component,
             this.Wood,
+            this.Component,
             this.Count});
             this.dataGridView.Location = new System.Drawing.Point(12, 41);
             this.dataGridView.Name = "dataGridView";
@@ -60,18 +60,21 @@ namespace Tp_2kurs
             this.SaveToExcel.UseVisualStyleBackColor = true;
             this.SaveToExcel.Click += new System.EventHandler(this.SaveToExcel_Click);
             // 
-            // Component
-            // 
-            this.Component.HeaderText = "Компонент";
-            this.Component.Name = "Component";
-            // 
             // Wood
             // 
             this.Wood.HeaderText = "Изделие";
             this.Wood.Name = "Wood";
+            this.Wood.Width = 200;
+            // 
+            // Component
+            // 
+            this.Component.HeaderText = "Компонент";
+            this.Component.Name = "Component";
+            this.Component.Width = 200;
             // 
             // Count
             // 
+            this.Count.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Count.HeaderText = "Количество";
             this.Count.Name = "Count";
             // 
@@ -94,8 +97,8 @@ namespace Tp_2kurs
 
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button SaveToExcel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Component;
         private System.Windows.Forms.DataGridViewTextBoxColumn Wood;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Component;
         private System.Windows.Forms.DataGridViewTextBoxColumn Count;
     }
 }

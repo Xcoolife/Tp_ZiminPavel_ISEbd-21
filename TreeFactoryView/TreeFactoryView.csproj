@@ -326,7 +326,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ReportOrders.rdlc" />
+    <EmbeddedResource Include="ReportOrder.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\FormComponent.datasource" />
     <None Include="Properties\DataSources\FormComponents.datasource" />
@@ -377,10 +377,6 @@
     <ProjectReference Include="..\TreeFactoryDatabaseImplement\TreeFactoryDatabaseImplement\TreeFactoryDatabaseImplement.csproj">
       <Project>{26C7AF22-96E5-4E42-88F8-D95BEF8FEA30}</Project>
       <Name>TreeFactoryDatabaseImplement</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TreeFactoryFileImplement\TreeFactoryFileImplement\TreeFactoryFileImplement.csproj">
-      <Project>{BA26AD37-63AB-4E44-85AF-750878D1A8CE}</Project>
-      <Name>TreeFactoryFileImplement</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

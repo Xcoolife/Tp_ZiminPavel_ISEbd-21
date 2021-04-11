@@ -27,13 +27,12 @@ namespace Tp_2kurs
 
         private void FormClientOrders_Load(object sender, EventArgs e)
         {
-
-            this.reportViewer.RefreshReport();
             this.reportViewer.RefreshReport();
         }
 
         private void buttonMake_Click(object sender, EventArgs e)
         {
+            reportViewer.LocalReport.DataSources.Clear();
             if (dateTimePickerFrom.Value.Date >= dateTimePickerTo.Value.Date)
             {
                 MessageBox.Show("Дата начала должна быть меньше даты окончания",

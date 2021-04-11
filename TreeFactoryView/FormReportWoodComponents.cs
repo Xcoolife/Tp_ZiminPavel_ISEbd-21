@@ -51,13 +51,13 @@ namespace Tp_2kurs
         {
             try
             {
-                var dict = logic.GetWoodComponents();
+                var dict = logic.GetWoodComponent();
                 if (dict != null)
                 {
                     dataGridView.Rows.Clear();
                     foreach (var elem in dict)
                     {
-                        dataGridView.Rows.Add(new object[] { elem.ComponentName, "", "" });
+                        dataGridView.Rows.Add(new object[] { elem.WoodName, "", "" });
                         foreach (var listElem in elem.Components)
                         {
                             dataGridView.Rows.Add(new object[] { "", listElem.Item1, listElem.Item2 });

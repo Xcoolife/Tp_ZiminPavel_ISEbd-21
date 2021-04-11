@@ -42,9 +42,6 @@ namespace TreeFactoryDatabaseImplement.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CannedId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Count")
                         .HasColumnType("int");
 
@@ -65,7 +62,7 @@ namespace TreeFactoryDatabaseImplement.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CannedId");
+                    b.HasIndex("WoodId");
 
                     b.ToTable("Orders");
                 });
@@ -96,9 +93,6 @@ namespace TreeFactoryDatabaseImplement.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CannedId")
-                        .HasColumnType("int");
-
                     b.Property<int>("ComponentId")
                         .HasColumnType("int");
 
@@ -110,9 +104,9 @@ namespace TreeFactoryDatabaseImplement.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CannedId");
-
                     b.HasIndex("ComponentId");
+
+                    b.HasIndex("WoodId");
 
                     b.ToTable("WoodComponents");
                 });
@@ -121,18 +115,22 @@ namespace TreeFactoryDatabaseImplement.Migrations
                 {
                     b.HasOne("TreeFactoryDatabaseImplement.Models.Wood", "Wood")
                         .WithMany("Order")
-                        .HasForeignKey("CannedId");
+                        .HasForeignKey("WoodId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("TreeFactoryDatabaseImplement.Models.WoodComponent", b =>
                 {
-                    b.HasOne("TreeFactoryDatabaseImplement.Models.Wood", "Wood")
-                        .WithMany("WoodComponents")
-                        .HasForeignKey("CannedId");
-
                     b.HasOne("TreeFactoryDatabaseImplement.Models.Component", "Component")
                         .WithMany("WoodComponents")
                         .HasForeignKey("ComponentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TreeFactoryDatabaseImplement.Models.Wood", "Wood")
+                        .WithMany("WoodComponents")
+                        .HasForeignKey("WoodId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

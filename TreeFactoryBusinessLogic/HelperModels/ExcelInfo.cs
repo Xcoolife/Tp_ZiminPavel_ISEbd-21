@@ -9,6 +9,6 @@ namespace TreeFactoryBusinessLogic.HelperModels
     {
         public string FileName { get; set; }
         public string Title { get; set; }
-        public List<ReportWoodComponentViewModel> ComponentWoods { get; set; }
+        public List<ReportWoodComponentViewModel> WoodComponents { get; set; }
     }
 }
